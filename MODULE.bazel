@@ -1,0 +1,84 @@
+"""jpy_election: 3D Japan election map + live vote dashboard.
+
+Bzlmod only -- there is intentionally no WORKSPACE file.
+"""
+
+module(
+    name = "jpy_election",
+    version = "0.1.0",
+)
+
+bazel_dep(name = "rules_cc", version = "0.2.25")
+bazel_dep(name = "platforms", version = "1.1.0")
+
+# C++ third-party libraries from the Bazel Central Registry.
+bazel_dep(name = "vulkan_headers", version = "1.4.349")
+bazel_dep(name = "glm", version = "1.0.3")
+bazel_dep(name = "nlohmann_json", version = "3.12.0.bcr.2")
+bazel_dep(name = "earcut", version = "2.2.4")
+bazel_dep(name = "stb", version = "0.0.0-20251026-f1c79c0")
+bazel_dep(name = "sqlite3", version = "3.53.4")
+
+bazel_dep(name = "googletest", version = "1.17.0.bcr.2", dev_dependency = True)
+
+# The BCR earcut module still uses the native cc_library, removed in Bazel 9.
+single_version_override(
+    module_name = "earcut",
+    patch_strip = 1,
+    patches = [
+        "//third_party:earcut_build.patch",
+        "//third_party:earcut_module.patch",
+    ],
+)
+
+http_archive = use_repo_rule("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
+
+# Prebuilt Skia (CPU raster + text) for Windows x64, built by the Aseprite project
+# (clang-cl, /MT, is_trivial_abi=false => ABI compatible with MSVC).
+http_archive(
+    name = "skia_prebuilt",
+    build_file = "//third_party:skia_prebuilt.BUILD",
+    # The archive ships Skia's own BUILD.bazel files inside include/, which would split it into
+    # sub-packages and break globbing. Strip them after extraction.
+    patch_cmds_win = [
+        "Get-ChildItem -Path include,modules,src -Recurse -File -Include BUILD.bazel,BUILD,*.bzl,MODULE.bazel,WORKSPACE.bazel -ErrorAction SilentlyContinue | Remove-Item -Force",
+    ],
+    sha256 = "2e8514fb498f5528a2e9396eb8f16892c1b81cce504a7e7b1d38dcb2e1f12881",
+    url = "https://github.com/aseprite/skia/releases/download/m151-a90155cff0/Skia-Windows-Release-x64.zip",
+)
+
+# Linux release of the same Skia revision. The Windows archive above contains
+# only MSVC libraries and headers, so Linux must use its matching ELF archive.
+http_archive(
+    name = "skia_linux_prebuilt",
+    build_file = "//third_party:skia_linux_prebuilt.BUILD",
+    patch_cmds = [
+        "find include modules src -type f -name BUILD.bazel -delete",
+    ],
+    sha256 = "456ba97a057338a8d58631a962f8012dc7ecba580713034bb351d223fed5f9e2",
+    url = "https://github.com/aseprite/skia/releases/download/m151-a90155cff0/Skia-Linux-Release-x64.zip",
+)
+
+# Prebuilt glslang compiler used at build time to turn GLSL into SPIR-V.
+http_archive(
+    name = "glslang_prebuilt",
+    build_file = "//third_party:glslang_prebuilt.BUILD",
+    sha256 = "82bf434e69b9bb4829de7e2b4bc2c5e7a7861e53d66cf75e5cc70f5f694a8d9b",
+    url = "https://github.com/KhronosGroup/glslang/releases/download/16.6.0/glslang-16.6.0-windows-x86_64-release.zip",
+)
+
+http_archive(
+    name = "glslang_linux_prebuilt",
+    build_file = "//third_party:glslang_linux_prebuilt.BUILD",
+    sha256 = "a3fc4f083b1793eb53e55fa3577ac9649ffbe0340715e30d116290fb5382393f",
+    url = "https://github.com/KhronosGroup/glslang/releases/download/16.6.0/glslang-16.6.0-linux-x86_64-release.zip",
+)
+
+# GLFW 3 (windowing), built from source.
+http_archive(
+    name = "glfw",
+    build_file = "//third_party:glfw.BUILD",
+    sha256 = "5234f4f29473e9a06bc7847d8371858dd135d38466eeeaa652fdc9f8f9ff0c20",
+    strip_prefix = "glfw-3.5.1",
+    urls = ["https://github.com/glfw/glfw/archive/refs/tags/3.5.1.tar.gz"],
+)

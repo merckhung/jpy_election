@@ -1,0 +1,19 @@
+{
+  "_comment": "News sources for `jpy_election --news` and `news_tool --fetch`. RSS 2.0 or Atom over http(s):// or file://. All URLs below returned HTTP 200 on 2026-09-27; disable any that fail later. Drop *.jsonl files ({title,url,source,published,summary} per line) into inbox_dir to ingest other sources.",
+  "interval_seconds": 600,
+  "classify_per_cycle": 40,
+  "inbox_dir": "data/news/inbox",
+  "google_news_per_candidate": false,
+  "llm": {
+    "base_url": "https://api.openai.com/v1",
+    "model": "gpt-4o-mini",
+    "json_mode": true
+  },
+  "feeds": [
+    {"name": "Google ニュース：衆院選 2026", "url": "https://news.google.com/rss/search?q=%E8%A1%86%E9%99%A2%E9%81%B8+2026&hl=ja&gl=JP&ceid=JP:ja"},
+    {"name": "Google ニュース：総選挙 小選挙区", "url": "https://news.google.com/rss/search?q=%E7%B7%8F%E9%81%B8%E6%8C%99+%E5%B0%8F%E9%81%B8%E6%8C%99%E5%8C%BA&hl=ja&gl=JP&ceid=JP:ja"},
+    {"name": "NHK 政治", "url": "https://www3.nhk.or.jp/rss/news/cat4.xml"},
+    {"name": "Yahoo!ニュース 国内", "url": "https://news.yahoo.co.jp/rss/topics/domestic.xml"},
+    {"name": "The Japan Times", "url": "https://www.japantimes.co.jp/feed/"}
+  ]
+}

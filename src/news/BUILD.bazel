@@ -1,0 +1,31 @@
+load("@rules_cc//cc:defs.bzl", "cc_library")
+
+package(default_visibility = ["//visibility:public"])
+
+cc_library(
+    name = "news",
+    srcs = [
+        "classifier.cc",
+        "feed_parser.cc",
+        "http.cc",
+        "mock_news.cc",
+        "service.cc",
+    ],
+    hdrs = [
+        "classifier.h",
+        "feed_parser.h",
+        "http.h",
+        "mock_news.h",
+        "service.h",
+    ],
+    # Windows: WinHTTP. Elsewhere: the host libcurl (headers from the system).
+    linkopts = select({
+        "@platforms//os:windows": ["winhttp.lib"],
+        "//conditions:default": ["-lcurl"],
+    }),
+    deps = [
+        "//src/election",
+        "//src/store",
+        "@nlohmann_json//:json",
+    ],
+)

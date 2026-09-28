@@ -1,0 +1,45 @@
+load("@rules_cc//cc:defs.bzl", "cc_library")
+
+package(default_visibility = ["//visibility:public"])
+
+# UI strings and localised data names (no Skia), so the string table and its
+# tests build independently of the dashboard.
+cc_library(
+    name = "i18n",
+    srcs = ["i18n.cc"],
+    hdrs = ["i18n.h"],
+    textual_hdrs = [
+        "i18n_dashboard.inc",
+        "i18n_live.inc",
+    ],
+    deps = [
+        "//src/election",
+        "//src/geo",
+    ],
+)
+
+cc_library(
+    name = "ui",
+    srcs = [
+        "avatars.cc",
+        "charts.cc",
+        "dashboard.cc",
+        "dashboard_live.cc",
+        "text.cc",
+    ],
+    hdrs = [
+        "avatars.h",
+        "dashboard.h",
+        "text.h",
+    ],
+    deps = [
+        ":i18n",
+        "//src/election",
+        "//src/geo",
+        "//src/store",
+        "@stb//:stb_image",
+    ] + select({
+        "@platforms//os:linux": ["@skia_linux_prebuilt//:skia"],
+        "@platforms//os:windows": ["@skia_prebuilt//:skia"],
+    }),
+)

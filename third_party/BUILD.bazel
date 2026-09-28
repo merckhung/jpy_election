@@ -1,0 +1,7 @@
+exports_files([
+    "glfw.BUILD",
+    "glslang_prebuilt.BUILD",
+    "skia_prebuilt.BUILD",
+    "skia_linux_prebuilt.BUILD",
+    "glslang_linux_prebuilt.BUILD",
+])

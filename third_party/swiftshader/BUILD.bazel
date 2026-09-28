@@ -1,0 +1,9 @@
+package(default_visibility = ["//visibility:public"])
+
+filegroup(
+    name = "swiftshader",
+    srcs = [
+        "vk_swiftshader.dll",
+        "vk_swiftshader_icd.json",
+    ],
+)

@@ -1,0 +1,251 @@
+{
+ "schema": "jpy_election.election/v1",
+ "election": {
+  "id": "2026-shugiin51",
+  "date": "2026-02-08",
+  "polls_open": "07:00",
+  "polls_close": "20:00",
+  "timezone": "Asia/Tokyo",
+  "name_ja": "第51回衆議院議員総選挙",
+  "name_en": "2026 Japanese general election (51st House of Representatives)",
+  "name_zh": "第51屆日本眾議院議員總選舉"
+ },
+ "dissolution": "2026-01-23",
+ "offices": [
+  {
+   "name_ja": "小選挙区",
+   "name_en": "Single-member districts",
+   "name_zh": "小選舉區",
+   "kind": "smd",
+   "seats": 289,
+   "candidates": 1119,
+   "headline": true
+  },
+  {
+   "name_ja": "比例代表",
+   "name_en": "Proportional representation (11 blocs)",
+   "name_zh": "比例代表（11區塊）",
+   "kind": "pr",
+   "seats": 176,
+   "candidates": 914,
+   "headline": true
+  }
+ ],
+ "totals": {
+  "seats": 465,
+  "majority": 233,
+  "supermajority": 310,
+  "candidates": 1284
+ },
+ "blocs": [
+  {
+   "id": "hokkaido",
+   "name_ja": "北海道ブロック",
+   "name_en": "Hokkaido",
+   "name_zh": "北海道區塊",
+   "seats": 8,
+   "prefs": [
+    "01"
+   ]
+  },
+  {
+   "id": "tohoku",
+   "name_ja": "東北ブロック",
+   "name_en": "Tohoku",
+   "name_zh": "東北區塊",
+   "seats": 12,
+   "prefs": [
+    "02",
+    "03",
+    "04",
+    "05",
+    "06",
+    "07"
+   ]
+  },
+  {
+   "id": "kita-kanto",
+   "name_ja": "北関東ブロック",
+   "name_en": "Northern Kanto",
+   "name_zh": "北關東區塊",
+   "seats": 19,
+   "prefs": [
+    "08",
+    "09",
+    "10",
+    "11"
+   ]
+  },
+  {
+   "id": "minami-kanto",
+   "name_ja": "南関東ブロック",
+   "name_en": "Southern Kanto",
+   "name_zh": "南關東區塊",
+   "seats": 23,
+   "prefs": [
+    "12",
+    "14",
+    "19"
+   ]
+  },
+  {
+   "id": "tokyo",
+   "name_ja": "東京ブロック",
+   "name_en": "Tokyo",
+   "name_zh": "東京區塊",
+   "seats": 19,
+   "prefs": [
+    "13"
+   ]
+  },
+  {
+   "id": "hokuriku-shinetsu",
+   "name_ja": "北陸信越ブロック",
+   "name_en": "Hokuriku-Shinetsu",
+   "name_zh": "北陸信越區塊",
+   "seats": 10,
+   "prefs": [
+    "15",
+    "16",
+    "17",
+    "18",
+    "20"
+   ]
+  },
+  {
+   "id": "tokai",
+   "name_ja": "東海ブロック",
+   "name_en": "Tokai",
+   "name_zh": "東海區塊",
+   "seats": 21,
+   "prefs": [
+    "21",
+    "22",
+    "23",
+    "24"
+   ]
+  },
+  {
+   "id": "kinki",
+   "name_ja": "近畿ブロック",
+   "name_en": "Kinki",
+   "name_zh": "近畿區塊",
+   "seats": 28,
+   "prefs": [
+    "25",
+    "26",
+    "27",
+    "28",
+    "29",
+    "30"
+   ]
+  },
+  {
+   "id": "chugoku",
+   "name_ja": "中国ブロック",
+   "name_en": "Chugoku",
+   "name_zh": "中國區塊",
+   "seats": 10,
+   "prefs": [
+    "31",
+    "32",
+    "33",
+    "34",
+    "35"
+   ]
+  },
+  {
+   "id": "shikoku",
+   "name_ja": "四国ブロック",
+   "name_en": "Shikoku",
+   "name_zh": "四國區塊",
+   "seats": 6,
+   "prefs": [
+    "36",
+    "37",
+    "38",
+    "39"
+   ]
+  },
+  {
+   "id": "kyushu",
+   "name_ja": "九州ブロック",
+   "name_en": "Kyushu",
+   "name_zh": "九州區塊",
+   "seats": 20,
+   "prefs": [
+    "40",
+    "41",
+    "42",
+    "43",
+    "44",
+    "45",
+    "46",
+    "47"
+   ]
+  }
+ ],
+ "referendums": [
+  {
+   "id": "review-takasu",
+   "kind": "review",
+   "scope": "national",
+   "justice_ja": "高須順一",
+   "justice_en": "Junichi Takasu",
+   "justice_zh": "高須順一",
+   "question_ja": "最高裁判所裁判官 高須順一 を罷免することを可とするか",
+   "question_en": "Should Supreme Court Justice Junichi Takasu be dismissed?",
+   "question_zh": "是否罷免最高法院法官 高須順一？",
+   "bio_ja": "弁護士出身（2025年就任）",
+   "bio_en": "Former attorney (appointed 2025)",
+   "bio_zh": "律師出身（2025年就任）",
+   "note": "A justice is dismissed only if 'dismiss' marks outnumber blank ballots (and turnout is at least 1% of the electorate). English/Chinese texts are unofficial."
+  },
+  {
+   "id": "review-okino",
+   "kind": "review",
+   "scope": "national",
+   "justice_ja": "沖野眞已",
+   "justice_en": "Masami Okino",
+   "justice_zh": "沖野眞已",
+   "question_ja": "最高裁判所裁判官 沖野眞已 を罷免することを可とするか",
+   "question_en": "Should Supreme Court Justice Masami Okino be dismissed?",
+   "question_zh": "是否罷免最高法院法官 沖野眞已？",
+   "bio_ja": "学者出身（2025年就任）",
+   "bio_en": "Former law professor (appointed 2025)",
+   "bio_zh": "學者出身（2025年就任）",
+   "note": "A justice is dismissed only if 'dismiss' marks outnumber blank ballots (and turnout is at least 1% of the electorate). English/Chinese texts are unofficial."
+  }
+ ],
+ "estimates": "Eligible voters per district = prefecture total x district share of Japanese population (2020 census, 2022 redistricting); per unit = district total split by valid votes.",
+ "sources": [
+  {
+   "title": "総務省: 衆議院議員総選挙・最高裁判所裁判官国民審査 速報結果/結果調 (令和8年2月8日執行)",
+   "url": "https://www.soumu.go.jp/senkyo/senkyo_s/data/shugiin51/index.html"
+  },
+  {
+   "title": "総務省: 市区町村別得票数 (第51回)",
+   "url": "https://www.soumu.go.jp/senkyo/senkyo_s/data/shugiin51/shikuchouson.html"
+  },
+  {
+   "title": "総務省: 市区町村別得票数 (第50回, 2024) — incumbents",
+   "url": "https://www.soumu.go.jp/senkyo/senkyo_s/data/shugiin50/shikuchouson.html"
+  },
+  {
+   "title": "西澤明 (地域・交通データ研究所): 衆議院小選挙区 2022 区割りポリゴン",
+   "url": "https://gtfs-gis.jp/senkyoku2022/"
+  },
+  {
+   "title": "SmartNews SMRI japan-topography (国土数値情報 行政区域データ N03, 国土交通省)",
+   "url": "https://github.com/smartnews-smri/japan-topography"
+  },
+  {
+   "title": "総務省: 全国地方公共団体コード",
+   "url": "https://www.soumu.go.jp/denshijiti/code.html"
+  },
+  {
+   "title": "Wikipedia: 2026 Japanese general election",
+   "url": "https://en.wikipedia.org/wiki/2026_Japanese_general_election"
+  }
+ ]
+}

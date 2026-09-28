@@ -1,0 +1,225 @@
+{
+ "schema": "jpy_election.parties/v1",
+ "parties": [
+  {
+   "code": "LDP",
+   "name_ja": "自由民主党",
+   "short_ja": "自民",
+   "name_en": "Liberal Democratic Party",
+   "short_en": "LDP",
+   "name_zh": "自由民主黨",
+   "short_zh": "自民黨",
+   "color": "#D7263D"
+  },
+  {
+   "code": "CRA",
+   "name_ja": "中道改革連合",
+   "short_ja": "中道",
+   "name_en": "Centrist Reform Alliance",
+   "short_en": "CRA",
+   "name_zh": "中道改革聯合",
+   "short_zh": "中道改革",
+   "color": "#1F5FAE"
+  },
+  {
+   "code": "JIP",
+   "name_ja": "日本維新の会",
+   "short_ja": "維新",
+   "name_en": "Japan Innovation Party (Ishin)",
+   "short_en": "Ishin",
+   "name_zh": "日本維新會",
+   "short_zh": "維新會",
+   "color": "#6FB52C"
+  },
+  {
+   "code": "DPFP",
+   "name_ja": "国民民主党",
+   "short_ja": "国民",
+   "name_en": "Democratic Party for the People",
+   "short_en": "DPP",
+   "name_zh": "國民民主黨",
+   "short_zh": "國民民主",
+   "color": "#F3B300"
+  },
+  {
+   "code": "SANSEI",
+   "name_ja": "参政党",
+   "short_ja": "参政",
+   "name_en": "Sanseito",
+   "short_en": "Sanseito",
+   "name_zh": "參政黨",
+   "short_zh": "參政黨",
+   "color": "#F07F1A"
+  },
+  {
+   "code": "JCP",
+   "name_ja": "日本共産党",
+   "short_ja": "共産",
+   "name_en": "Japanese Communist Party",
+   "short_en": "JCP",
+   "name_zh": "日本共產黨",
+   "short_zh": "共產黨",
+   "color": "#8E3E9E"
+  },
+  {
+   "code": "REIWA",
+   "name_ja": "れいわ新選組",
+   "short_ja": "れいわ",
+   "name_en": "Reiwa Shinsengumi",
+   "short_en": "Reiwa",
+   "name_zh": "令和新選組",
+   "short_zh": "令和",
+   "color": "#E4007F"
+  },
+  {
+   "code": "GENZEI",
+   "name_ja": "減税日本・ゆうこく連合",
+   "short_ja": "減ゆ",
+   "name_en": "Tax Cuts Japan & Yukoku Alliance",
+   "short_en": "Genzei-Yukoku",
+   "name_zh": "減稅日本・憂國聯合",
+   "short_zh": "減稅憂國",
+   "color": "#8D6E4F"
+  },
+  {
+   "code": "CPJ",
+   "name_ja": "日本保守党",
+   "short_ja": "保守",
+   "name_en": "Conservative Party of Japan",
+   "short_en": "CPJ",
+   "name_zh": "日本保守黨",
+   "short_zh": "保守黨",
+   "color": "#2E3A87"
+  },
+  {
+   "code": "SDP",
+   "name_ja": "社会民主党",
+   "short_ja": "社民",
+   "name_en": "Social Democratic Party",
+   "short_en": "SDP",
+   "name_zh": "社會民主黨",
+   "short_zh": "社民黨",
+   "color": "#1CA9E9"
+  },
+  {
+   "code": "MIRAI",
+   "name_ja": "チームみらい",
+   "short_ja": "みらい",
+   "name_en": "Team Mirai",
+   "short_en": "Mirai",
+   "name_zh": "未來團隊",
+   "short_zh": "未來團隊",
+   "color": "#00A7A0"
+  },
+  {
+   "code": "EUTH",
+   "name_ja": "安楽死制度を考える会",
+   "short_ja": "安楽死",
+   "name_en": "Society to Consider Euthanasia",
+   "short_en": "Euthanasia",
+   "name_zh": "思考安樂死制度會",
+   "short_zh": "安樂死會",
+   "color": "#9E9E9E"
+  },
+  {
+   "code": "SAISEI",
+   "name_ja": "再生の道",
+   "short_ja": "再生",
+   "name_en": "Path to Rebirth (Saisei no Michi)",
+   "short_en": "Saisei",
+   "name_zh": "再生之道",
+   "short_zh": "再生之道",
+   "color": "#5C6BC0"
+  },
+  {
+   "code": "MUREN",
+   "name_ja": "無所属連合",
+   "short_ja": "無連",
+   "name_en": "Independents' Union",
+   "short_en": "Ind. Union",
+   "name_zh": "無黨籍聯合",
+   "short_zh": "無黨聯合",
+   "color": "#90A4AE"
+  },
+  {
+   "code": "YAMATO",
+   "name_ja": "日本大和党",
+   "short_ja": "大和",
+   "name_en": "Japan Yamato Party",
+   "short_en": "Yamato",
+   "name_zh": "日本大和黨",
+   "short_zh": "大和黨",
+   "color": "#7E6B5A"
+  },
+  {
+   "code": "WPP",
+   "name_ja": "世界平和党",
+   "short_ja": "世平",
+   "name_en": "World Peace Party",
+   "short_en": "World Peace",
+   "name_zh": "世界和平黨",
+   "short_zh": "世界和平黨",
+   "color": "#81A88F"
+  },
+  {
+   "code": "ICHIBAN",
+   "name_ja": "一番星",
+   "short_ja": "一番星",
+   "name_en": "Ichibanboshi",
+   "short_en": "Ichibanboshi",
+   "name_zh": "一番星",
+   "short_zh": "一番星",
+   "color": "#B39DDB"
+  },
+  {
+   "code": "FUSION",
+   "name_ja": "核融合党",
+   "short_ja": "核融合",
+   "name_en": "Nuclear Fusion Party",
+   "short_en": "Fusion",
+   "name_zh": "核融合黨",
+   "short_zh": "核融合黨",
+   "color": "#4DB6AC"
+  },
+  {
+   "code": "MIRASHIN",
+   "name_ja": "未来進歩党",
+   "short_ja": "未進",
+   "name_en": "Future Progress Party",
+   "short_en": "Fut. Progress",
+   "name_zh": "未來進步黨",
+   "short_zh": "未來進步",
+   "color": "#A5D6A7"
+  },
+  {
+   "code": "JFP",
+   "name_ja": "日本自由党",
+   "short_ja": "日自",
+   "name_en": "Japan Liberty Party",
+   "short_en": "Liberty",
+   "name_zh": "日本自由黨",
+   "short_zh": "日本自由黨",
+   "color": "#9FA8DA"
+  },
+  {
+   "code": "KOKORO",
+   "name_ja": "心の党",
+   "short_ja": "心",
+   "name_en": "Kokoro Party",
+   "short_en": "Kokoro",
+   "name_zh": "心之黨",
+   "short_zh": "心之黨",
+   "color": "#F48FB1"
+  },
+  {
+   "code": "IND",
+   "name_ja": "無所属",
+   "short_ja": "無所属",
+   "name_en": "Independent",
+   "short_en": "Ind.",
+   "name_zh": "無黨籍",
+   "short_zh": "無黨籍",
+   "color": "#8C8C8C"
+  }
+ ]
+}

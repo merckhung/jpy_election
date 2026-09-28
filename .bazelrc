@@ -1,0 +1,37 @@
+common --enable_bzlmod
+common --noenable_workspace
+common --enable_platform_specific_config
+
+build -c opt
+# Skia is prebuilt/static; link everything statically.
+build --dynamic_mode=off
+
+# Windows / MSVC (default toolchain). The prebuilt Skia is linked against the
+# static CRT (/MT), so everything else must be too.
+build:windows --features=static_link_msvcrt
+build:windows --features=compiler_param_file
+build:windows --cxxopt=/std:c++20 --host_cxxopt=/std:c++20
+build:windows --copt=/utf-8 --host_copt=/utf-8
+build:windows --copt=/EHsc --host_copt=/EHsc
+build:windows --copt=/W3
+build:windows --copt=/Zc:__cplusplus
+build:windows --copt=/DNOMINMAX --host_copt=/DNOMINMAX
+build:windows --copt=/DWIN32_LEAN_AND_MEAN --host_copt=/DWIN32_LEAN_AND_MEAN
+build:windows --copt=/D_CRT_SECURE_NO_WARNINGS --host_copt=/D_CRT_SECURE_NO_WARNINGS
+# The default MSVC toolchain pins Windows 7; target Windows 10.
+build:windows --copt=/U_WIN32_WINNT --copt=/D_WIN32_WINNT=0x0A00
+build:windows --copt=/UWINVER --copt=/DWINVER=0x0A00
+# float/int and size_t conversions (also triggered inside Skia headers).
+build:windows --copt=/wd4244 --copt=/wd4267 --copt=/wd4305 --copt=/wd4018
+
+# Linux (GCC/Clang). Kept for reference; the Windows port does not need it.
+build:linux --cxxopt=-std=c++20 --host_cxxopt=-std=c++20
+
+# Debug build: bazel build --config=dbg //:jpy_election
+build:dbg -c dbg
+build:debug -c dbg
+
+test --test_output=errors
+
+# Machine-local overrides (mirrors, local module overrides, ...).
+try-import %workspace%/user.bazelrc

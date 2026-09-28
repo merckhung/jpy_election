@@ -1,0 +1,25 @@
+load("@rules_cc//cc:defs.bzl", "cc_library")
+
+package(default_visibility = ["//visibility:public"])
+
+cc_library(
+    name = "election",
+    srcs = [
+        "events.cc",
+        "model.cc",
+        "results.cc",
+        "results_source.cc",
+        "seats.cc",
+    ],
+    hdrs = [
+        "events.h",
+        "model.h",
+        "results.h",
+        "results_source.h",
+        "seats.h",
+    ],
+    deps = [
+        "//src/geo",
+        "@nlohmann_json//:json",
+    ],
+)

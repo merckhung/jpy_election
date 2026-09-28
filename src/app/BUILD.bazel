@@ -1,0 +1,53 @@
+load("@rules_cc//cc:defs.bzl", "cc_library")
+
+package(default_visibility = ["//visibility:public"])
+
+exports_files(["main.cc"])
+
+cc_library(
+    name = "camera",
+    srcs = ["camera.cc"],
+    hdrs = ["camera.h"],
+    deps = ["@glm"],
+)
+
+cc_library(
+    name = "app_lib",
+    srcs = [
+        "app.cc",
+        "live.cc",
+        "music.cc",
+        "stb_impl.cc",
+    ],
+    hdrs = [
+        "app.h",
+        "music.h",
+    ],
+    linkopts = select({
+        "@platforms//os:linux": [
+            "-lasound",
+            "-pthread",
+        ],
+        "@platforms//os:windows": ["winmm.lib"],
+        "//conditions:default": [],
+    }),
+    deps = [
+        ":camera",
+        "//src/election",
+        "//src/geo",
+        "//src/news",
+        "//src/render",
+        "//src/store",
+        "//src/ui",
+        "//src/ui:i18n",
+        "@glfw",
+        "@stb//:stb_image_write",
+    ],
+)
+
+# The binary itself lives in the root package (//:jpy_election) so that it
+# lands at bazel-bin/jpy_election(.exe).
+alias(
+    name = "jpy_election",
+    actual = "//:jpy_election",
+)

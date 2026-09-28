@@ -1,0 +1,32 @@
+load("@rules_cc//cc:defs.bzl", "cc_binary")
+
+package(default_visibility = ["//visibility:public"])
+
+exports_files(["LICENSE"])
+
+filegroup(
+    name = "data",
+    srcs = glob(
+        ["data/**"],
+        exclude = ["data/raw/**"],
+        allow_empty = True,
+    ),
+)
+
+filegroup(
+    name = "assets",
+    srcs = glob(
+        ["assets/**"],
+        allow_empty = True,
+    ),
+)
+
+cc_binary(
+    name = "jpy_election",
+    srcs = ["//src/app:main.cc"],
+    data = [
+        ":assets",
+        ":data",
+    ],
+    deps = ["//src/app:app_lib"],
+)

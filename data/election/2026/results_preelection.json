@@ -1,0 +1,8 @@
+{
+ "schema": "jpy_election.results/v1",
+ "status": "pre-election",
+ "source": "No votes yet: polls open 2026-02-08 07:00-20:00 (Asia/Tokyo). Replace this file (or pass --results) with a live feed; the app hot-reloads it.",
+ "updated_at": "2026-02-07T00:00:00+09:00",
+ "races": {},
+ "referendums": {}
+}

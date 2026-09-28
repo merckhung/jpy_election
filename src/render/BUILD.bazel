@@ -1,0 +1,53 @@
+load("@rules_cc//cc:defs.bzl", "cc_library")
+load("//bazel:shaders.bzl", "spirv_library")
+
+package(default_visibility = ["//visibility:public"])
+
+spirv_library(
+    name = "scene_shaders",
+    srcs = [
+        "shaders/bars.frag",
+        "shaders/bars.vert",
+        "shaders/ground.frag",
+        "shaders/ground.vert",
+        "shaders/map.frag",
+        "shaders/map.vert",
+        "shaders/overlay.frag",
+        "shaders/overlay.vert",
+    ],
+    hdrs = ["shaders/common.glsl"],
+    glslang = select({
+        "@platforms//os:linux": "@glslang_linux_prebuilt//:bin/glslang",
+        "@platforms//os:windows": "@glslang_prebuilt//:bin/glslang.exe",
+    }),
+)
+
+cc_library(
+    name = "render",
+    srcs = [
+        "renderer.cc",
+        "vk_context.cc",
+        "vk_loader.cc",
+    ],
+    hdrs = [
+        "renderer.h",
+        "vk_context.h",
+        "vk_loader.h",
+    ],
+    # Bundled SwiftShader ICD, used when no hardware Vulkan driver is present.
+    data = select({
+        "@platforms//os:windows": ["//third_party/swiftshader"],
+        "//conditions:default": [],
+    }),
+    linkopts = select({
+        "@platforms//os:windows": [],
+        "//conditions:default": ["-ldl"],
+    }),
+    deps = [
+        ":scene_shaders",
+        "//src/geo",
+        "@glfw",
+        "@glm",
+        "@vulkan_headers//:vulkan_headers_no_prototypes",
+    ],
+)
